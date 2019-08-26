@@ -6,7 +6,7 @@ import '../src/styles/styles.scss'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App body">
       <Header/>
       <h2>Test App for now</h2>
       <Messagebox/>

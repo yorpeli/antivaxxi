@@ -1,10 +1,16 @@
 
-export const profession = [
+export const professionF = [
     'הומאופתית',
     'אוסתאופתית',
     'נטורופתית'
 ];
 
+
+export const professionM = [
+    'הומאופת',
+    'אוסתאופת',
+    'נטורופת'
+];
 
 export const profession2 = [
     'ריפוי בעיסוק',
@@ -27,5 +33,6 @@ export const treatVia =[
     'שערים ישנים של פנאי פלוס',
     'שאריות בלורית של יאיר לפיד',
     'מדבקות הלו קיטי',
-    'ערגליות תות'
+    'ערגליות תות',
+    `איי ליינר`
 ];
