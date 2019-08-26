@@ -1,0 +1,29 @@
+.box{
+     color: red;
+     display: 'flex';
+    align-items: center;
+    justify-content: 'center';
+    
+    margin:0 auto;
+    direction: rtl;
+    text-align: right;
+    border-style: solid;
+    height: 10rem;
+    margin:0;
+}
+
+.box_header{
+    width: 100%;
+    background-color: #537d91;
+    margin: 0 -1rem 0 2rem;
+    border-style: solid;
+    border-color: black;
+}
+.box_body{
+    width: 100%;
+    background-color: #eae7af;
+    margin: -1rem auto;
+    height: 100%;
+    border-style: solid;
+    border-color: black;
+}
