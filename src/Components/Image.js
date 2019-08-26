@@ -1,9 +1,13 @@
 import React from 'react';
-import logo from '../Assets/333.jpg';
+import images from '../values/images';
+import getItemFromArray from '../values/returnValue';
 
+
+const logo = getItemFromArray(images);
 const Tmuna = () =>{
     return(
-        <img src={logo} alt="Avatar" className='box_img'/>
+        <img src={ logo } alt="Avatar" className='box_img' />
+        
     );
 };
 
