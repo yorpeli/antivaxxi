@@ -4,8 +4,6 @@ import getHiller from '../values/getHiller';
 import hillerContext from '../context/hillerContext';
 import Tmuna from '../Components/Image';
 
-import '../styles/components/_messagebox.scss';
-
 class Messagebox extends React.Component {
     state = {
         hiller: getHiller()
@@ -21,10 +19,10 @@ class Messagebox extends React.Component {
                 </div>
             </div>
             <div className='row'>
-                <div className = 'box_body col-1'>
+                <div className = 'box_center col-2'>
                     <Tmuna/>
                 </div>
-                <div classNameclear = 'box_body col-11'>
+                <div className = 'box_body col-10'>
                     <Message/>
                 </div>
             </div>
