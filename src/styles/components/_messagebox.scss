@@ -10,6 +10,7 @@
     height: 100%;  
 }
 .box{
+    background-color: white;
     border-style: solid;
     border-width: 2px;
     direction: rtl;
@@ -17,15 +18,16 @@
 }
 
 .box_header{
-    height:2rem;
+    height:3rem;
     display: 'flex';
     width:100%;
     color:white;
     background-color:#4267B2;
 }
 .box_body{
-    background-color: #FFFFFF;
+    background-color: white;
     height: 100%;
+    margin-top:10px;
 }
 .box_center{
     background-color: #FFFFFF;
@@ -33,17 +35,18 @@
 .box_img{
     padding: 5px;
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-    border-style: solid;
-    border-color:gray;
-    border-width: 1px;
-    margin-top: 15%;
+    width: 3rem;
+    height: 3rem;
+    // border-style: solid;
+    // border-color:gray;
+    // border-width: 1px;
+  //  margin-top: 15%;
 }
 
 .headers{
     font-weight: 600;
     font-size:120%;
+    margin-top:7px;
 }
 
 @media (max-width:50rem) {

@@ -3,7 +3,7 @@ import Message from './message';
 import MessageHeader from '../Components/MessageHeader';
 import getHiller from '../values/getHiller';
 import hillerContext from '../context/hillerContext';
-import Tmuna from '../Components/Image';
+
 
 class Messagebox extends React.Component {
     state = {
@@ -20,10 +20,7 @@ class Messagebox extends React.Component {
                 </div>
             </div>
             <div className='row'>
-                <div className = 'box_center col-12 col-md-2'>
-                    <Tmuna/>
-                </div>
-                <div className = 'box_body col-12 col-md-10'>
+                <div className = 'box_body col-12'>
                     <Message/>
                 </div>
             </div>
