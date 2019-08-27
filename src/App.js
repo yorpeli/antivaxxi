@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App body">
       <Header/>
-      <h2>Test App for now</h2>
+      <p></p>
       <Messagebox/>
     </div>
   );

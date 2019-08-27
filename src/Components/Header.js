@@ -4,7 +4,7 @@ import React from 'react';
 const Header = ()=>{
     return(
         <div className='header'>
-            <h2>Header</h2>
+            <h2>מחולל פוסטים - בחירה מושכלת</h2>
         </div>
         
     );

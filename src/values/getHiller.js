@@ -1,6 +1,7 @@
 import { lastName, gender, namesF, namesM } from '../values/hillers';
-import { professionM, professionF } from '../values/values';
+import { vaccine, charlatan, org, whyNot, professionM, professionF } from '../values/values';
 import { profession2,treatVia } from '../values/values';
+import images from '../values/images';
 import getItemFromArray from '../values/returnValue';
 
 const getHiller = ()=>{
@@ -11,8 +12,13 @@ const getHiller = ()=>{
     const via = getItemFromArray(treatVia);
 
     return {
-        age:43,
+        vaccine: getItemFromArray(vaccine),
+        mehasen:genderHiller ==='f'? ('מחסנת'):('מחסן'),
+        mamlitz: genderHiller ==='f'? ('ממליצה'):('ממליץ'),
+        charlatan: getItemFromArray(charlatan),
         name : genderHiller ==='f'? (getItemFromArray(namesF)) : (getItemFromArray(namesM)),
+        org: getItemFromArray(org),
+        whyNot: getItemFromArray(whyNot),
         lastName:getItemFromArray(lastName),
         gender: genderHiller,
         prof: profession,
@@ -20,9 +26,8 @@ const getHiller = ()=>{
         randYear,
         prof2,
         via,
-        image: '../Assets/111.jpg'
+        img: getItemFromArray(images)
     };
-
 };
 
 export {getHiller as default};

@@ -1,5 +1,6 @@
 import React from 'react';
 import Message from './message';
+import MessageHeader from '../Components/MessageHeader';
 import getHiller from '../values/getHiller';
 import hillerContext from '../context/hillerContext';
 import Tmuna from '../Components/Image';
@@ -15,7 +16,7 @@ class Messagebox extends React.Component {
         <div className='box col-6 offset-3'>
             <div className = 'row'>
                 <div className='box_header col-12'>
-                    <p>{`${this.state.hiller.name} ${this.state.hiller.lastName}`}</p>
+                <MessageHeader/>    
                 </div>
             </div>
             <div className='row'>
@@ -27,7 +28,11 @@ class Messagebox extends React.Component {
                 </div>
             </div>
         </div>
-        <button onClick={()=>this.setState({hiller: getHiller()})}>Refresh</button>
+        <div className='row btn_row'>
+            <div className ='btn_col col-6 offset-3 '>
+                <button className='btn-primary heb_btn' onClick={()=>this.setState({hiller: getHiller()})}>עוד אחד!</button>
+            </div>
+        </div>
         </hillerContext.Provider>
     );
 };

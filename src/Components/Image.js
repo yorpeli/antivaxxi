@@ -1,12 +1,10 @@
-import React from 'react';
-import images from '../values/images';
-import getItemFromArray from '../values/returnValue';
+import React, {useContext} from 'react';
+import hillerContext from '../context/hillerContext';
 
-
-const logo = getItemFromArray(images);
 const Tmuna = () =>{
+    const {img} = useContext(hillerContext); 
     return(
-        <img src={ logo } alt="Avatar" className='box_img' />
+        <img src={ img } alt="Avatar" className='box_img' />
         
     );
 };
