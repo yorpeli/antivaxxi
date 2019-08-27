@@ -1,5 +1,6 @@
 .btn_row{
     margin-top:5px;
+    margin-bottom: 1rem;
 }
 .btn_col{
     align-content: center;
@@ -7,4 +8,10 @@
 .heb_btn{
     direction: rtl;
     //background-color:#4267B2;
+}
+@media (max-width:50rem){
+    .btn_row{
+        margin-left:10px;
+        margin-right:10px;
+    }
 }
