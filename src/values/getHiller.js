@@ -4,18 +4,37 @@ import { profession2,treatVia } from '../values/values';
 import images from '../values/images';
 import getItemFromArray from '../values/returnValue';
 import uuid from 'uuid';
-import * as firebase from 'firebase';
+import moment from 'moment';
 
 const getHiller = ()=>{
-    const db = firebase.database();
+    
+    const vaccineA = vaccine;
+
+    // db.ref(`values/vaccine`)
+    //     .once('value')
+    //     .then((snapshot) =>{
+    //         let vaccineA = [];
+    //         snapshot.forEach((childSnapshot)=>{
+    //             vaccineA.push(childSnapshot.val());
+    //         });
+    //     console.log(vaccineA);
+    //     }).catch((e)=>{
+    //         let vaccineA = vaccine; 
+    //     });
+
     const genderHiller = getItemFromArray (gender);
     const profession = genderHiller ==='f'? (getItemFromArray(professionF)) : (getItemFromArray(professionM));
     const randYear = Math.floor(Math.random() * 40) + 11;
     const prof2 = getItemFromArray(profession2);
     const via = getItemFromArray(treatVia);
+    
+
+    const id = uuid();
 
     const hiller = {
-        vaccine: getItemFromArray(vaccine),
+        id,
+        timeStamp: moment().format('MMMM Do YYYY, HH:mm:ss a'),
+        vaccine: getItemFromArray(vaccineA),
         mehasen:genderHiller ==='f'? ('מחסנת'):('מחסן'),
         mamlitz: genderHiller ==='f'? ('ממליצה'):('ממליץ'),
         charlatan: getItemFromArray(charlatan),
@@ -31,8 +50,9 @@ const getHiller = ()=>{
         via,
         img: getItemFromArray(images)
     };
-const id = uuid();
-db.ref(id).set(hiller);
+//const today =  moment().format('MMMM Do YYYY').toString();
+//db.ref("Hillers/"+id).set(hiller).catch((e)=>{console.log(e)});
+//db.ref('Usage/'+today+"/"+id).set(moment().format('HH:mm:ss a').toString());
 return hiller;
 };
 

@@ -8,7 +8,13 @@ export const vaccine = [
     `פוליו מומת`,
     `חיסון החצבת`,
     `חצבת. אה.. סליחה. פוליו, פוליו. התכוונתי לפוליו`
-]
+];
+
+
+//const db = firebase.database();
+//db.ref('values/vaccine').push(`MMR`);
+//const def = [
+  
 
 export const org =[
     `מטרד הבריאות`,
