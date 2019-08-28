@@ -1,3 +1,23 @@
+//import React, { useContext } from 'react';
+//import valuesContext from '../context/ValuesContext';
+
+// export const Vaccine = ()=>{
+//    // const da = useContext(valuesContext.vaccine);
+//     //const {name, lastName} = useContext(hillerContext);
+//     return(
+//       's'
+//         // [
+//         //     'MMR',
+//         //     `רוטה`,
+//         //     `אדמת`,
+//         //     `ויטמין K`,
+//         //     `פוליו מוחלש`,
+//         //     `פוליו מומת`,
+//         //     `חיסון החצבת`,
+//         //     `חצבת. אה.. סליחה. פוליו, פוליו. התכוונתי לפוליו`
+//         // ]
+//     );
+// };
 
 export const vaccine = [
     'MMR',
@@ -10,11 +30,9 @@ export const vaccine = [
     `חצבת. אה.. סליחה. פוליו, פוליו. התכוונתי לפוליו`
 ];
 
-
 //const db = firebase.database();
 //db.ref('values/vaccine').push(`MMR`);
 //const def = [
-  
 
 export const org =[
     `מטרד הבריאות`,

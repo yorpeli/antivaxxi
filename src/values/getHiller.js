@@ -1,3 +1,4 @@
+
 import { lastName, gender, namesF, namesM } from '../values/hillers';
 import { vaccine, charlatan, org, whyNot, professionM, professionF } from '../values/values';
 import { profession2,treatVia } from '../values/values';
@@ -8,20 +9,6 @@ import moment from 'moment';
 
 const getHiller = ()=>{
     
-    const vaccineA = vaccine;
-
-    // db.ref(`values/vaccine`)
-    //     .once('value')
-    //     .then((snapshot) =>{
-    //         let vaccineA = [];
-    //         snapshot.forEach((childSnapshot)=>{
-    //             vaccineA.push(childSnapshot.val());
-    //         });
-    //     console.log(vaccineA);
-    //     }).catch((e)=>{
-    //         let vaccineA = vaccine; 
-    //     });
-
     const genderHiller = getItemFromArray (gender);
     const profession = genderHiller ==='f'? (getItemFromArray(professionF)) : (getItemFromArray(professionM));
     const randYear = Math.floor(Math.random() * 40) + 11;
@@ -34,7 +21,7 @@ const getHiller = ()=>{
     const hiller = {
         id,
         timeStamp: moment().format('MMMM Do YYYY, HH:mm:ss a'),
-        vaccine: getItemFromArray(vaccineA),
+        vaccine: getItemFromArray(vaccine),
         mehasen:genderHiller ==='f'? ('מחסנת'):('מחסן'),
         mamlitz: genderHiller ==='f'? ('ממליצה'):('ממליץ'),
         charlatan: getItemFromArray(charlatan),
