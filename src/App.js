@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../src/Components/Header';
 import Messagebox from './Components/Messagebox';
+import '../src/firebase/firebase';
 
 import '../src/styles/styles.scss'
 
