@@ -1,0 +1,22 @@
+.input_box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input_btn{
+    
+}
+.input_line{
+    width: 70%;
+    direction:rtl;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.input_error{
+    text-align: center;
+    font-weight: 900;
+    color:red;
+}
