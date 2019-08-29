@@ -1,10 +1,9 @@
 import { lastName, gender, namesF, namesM } from '../values/hillers';
-import { vaccine, charlatan, org, whyNot, professionM, professionF } from '../values/values';
-import { profession2,treatVia } from '../values/values';
 import images from '../values/images';
 import getItemFromArray from '../values/returnValue';
 
-const getHiller = ()=>{
+const getHiller = (val)=>{
+    const {vaccine, charlatan, org, whyNot, professionM, professionF,profession2,treatVia} = val;
     const genderHiller = getItemFromArray (gender);
     const profession = genderHiller ==='f'? (getItemFromArray(professionF)) : (getItemFromArray(professionM));
     const randYear = Math.floor(Math.random() * 40) + 11;
