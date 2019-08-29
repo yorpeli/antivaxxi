@@ -4,7 +4,6 @@ import Messagebox from './Components/Messagebox';
 import AskForThings from './Components/AskForThings';
 
 import '../src/firebase/firebase';
-
 import '../src/styles/styles.scss'
 
 function App() {

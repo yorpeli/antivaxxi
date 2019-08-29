@@ -1,3 +1,14 @@
+// getvalues = ()=>{
+//     const db = firebase.database();
+//         Object.entries(values).forEach(([key, value])=>{
+//         let array = value;
+//             array.forEach((item)=>{
+//                 db.ref('values/'+key).push(item)
+//             });
+//     });
+//     };
+
+
 export const gender = [
     'f',
     'm'

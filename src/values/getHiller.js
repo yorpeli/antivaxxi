@@ -1,13 +1,15 @@
-
-import { lastName, gender, namesF, namesM } from '../values/hillers';
 import images from '../values/images';
 import getItemFromArray from '../values/returnValue';
 import uuid from 'uuid';
 import moment from 'moment';
+import * as firebase from 'firebase';
 
 
 const getHiller = (val)=>{
-    const {vaccine, charlatan, org, whyNot, professionM, professionF,profession2,treatVia} = val;
+    const db = firebase.database();
+    const {vaccine, charlatan, org, whyNot, professionM, 
+        professionF,profession2,treatVia,
+        lastName, gender, namesF, namesM} = val;
     const genderHiller = getItemFromArray (gender);
     const profession = genderHiller ==='f'? (getItemFromArray(professionF)) : (getItemFromArray(professionM));
     const randYear = Math.floor(Math.random() * 40) + 11;
@@ -36,9 +38,9 @@ const getHiller = (val)=>{
         via,
         img: getItemFromArray(images)
     };
-//const today =  moment().format('MMMM Do YYYY').toString();
-//db.ref("Hillers/"+id).set(hiller).catch((e)=>{console.log(e)});
-//db.ref('Usage/'+today+"/"+id).set(moment().format('HH:mm:ss a').toString());
+const today =  moment().format('MMMM Do YYYY').toString();
+db.ref("Hillers/"+id).set(hiller).catch((e)=>{console.log(e)});
+db.ref('Usage/'+today+"/"+id).set(moment().format('HH:mm:ss a').toString());
 return hiller;
 };
 
