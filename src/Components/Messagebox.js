@@ -16,19 +16,32 @@ class Messagebox extends React.Component {
         updatedValues:{},
         gotValues:false
     };
-    
+   
     getvalues =()=>{
         if(!this.state.gotValues){
             const db = firebase.database();
-            console.log(db.ref('values/vaccine'));
+            db.ref('values').once('value').then((snapshot)=>{
+                snapshot.forEach((childSnapshot) => {
+                    let array = [];
+                    childSnapshot.forEach((granSnapshot) => {
+                        array.push(granSnapshot.val());
+                    });
+                    //this.state.updatedValues[childSnapshot.key] = array;
+                    this.setState({
+                        updatedValues: {[childSnapshot.key] : array}
+                    });
+                });
+               
+            }).catch((e)=>{
+                console.log('Something went wong');
+            });
             this.setState({
                 hiller:getHiller(values),
                 gotValues:true
             });
-            console.log('1');
         }else{
-            this.setState({hiller:getHiller(values)});
-            console.log('2')
+            const getThis = this.state.updatedValues;
+            this.setState({hiller:getHiller(getThis)});
         }
     };
 

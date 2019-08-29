@@ -3,6 +3,8 @@
 2. Connected to FBase DB to log usage and log Hiller (later for FB sharing.)
 
 #0.6 Planned
-1. Routing
-2. Id to retrive specific item
-3. Store values in db and retrive 
+1. Store values in db and retrive
+
+#.1. Id to retrive specific item
+#. routing
+#.fb sharing of link
