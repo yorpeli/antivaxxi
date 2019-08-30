@@ -2,7 +2,8 @@ import images from '../values/images';
 import getItemFromArray from '../values/returnValue';
 import uuid from 'uuid';
 import moment from 'moment';
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 
 const getHiller = (val)=>{
@@ -38,9 +39,11 @@ const getHiller = (val)=>{
         via,
         img: getItemFromArray(images)
     };
-const today =  moment().format('MMMM Do YYYY').toString();
-db.ref("Hillers/"+id).set(hiller).catch((e)=>{console.log(e)});
-db.ref('Usage/'+today+"/"+id).set(moment().format('HH:mm:ss a').toString());
+    if (process.env.NODE_ENV ==='production'){
+        const today =  moment().format('MMMM Do YYYY').toString();
+         db.ref("Hillers/"+id).set(hiller).catch((e)=>{console.log(e)});
+         db.ref('Usage/'+today+"/"+id).set(moment().format('HH:mm:ss a').toString());
+    }
 return hiller;
 };
 

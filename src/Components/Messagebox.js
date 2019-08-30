@@ -27,11 +27,12 @@ class Messagebox extends React.Component {
                         array.push(granSnapshot.val());
                     });
                     //this.state.updatedValues[childSnapshot.key] = array;
-                    this.setState({
-                        updatedValues: {[childSnapshot.key] : array}
-                    });
+                    this.setState((prevState)=>({
+                        updatedValues: {
+                            ...prevState.updatedValues,
+                            [childSnapshot.key] : array}
+                    }));
                 });
-               
             }).catch((e)=>{
                 console.log('Something went wong');
             });
