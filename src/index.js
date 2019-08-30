@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../src/firebase/firebase';
+import '../src/styles/styles.scss'
 import 'normalize.css/normalize.css';
-import App from './App';
+import AppRouter from './Routers/AppRouter';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const AppRender = (
+    <AppRouter/>
+);
+
+ReactDOM.render(AppRender, document.getElementById('root'));
 
 serviceWorker.unregister();

@@ -3,10 +3,8 @@ import Header from '../src/Components/Header';
 import Messagebox from './Components/Messagebox';
 import AskForThings from './Components/AskForThings';
 
-import '../src/firebase/firebase';
-import '../src/styles/styles.scss'
 
-function App() {
+function genreator() {
   return (
     <div className="container">
       <Header/>
@@ -18,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default genreator;
