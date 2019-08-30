@@ -5,6 +5,8 @@
 #0.6 Planned
 1. Store values in db and retrive
 
-#.1. Id to retrive specific item
-#. routing
+#.0.7
+1. Id to retrive specific item
+2. routing
+
 #.fb sharing of link
