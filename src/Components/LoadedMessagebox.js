@@ -12,13 +12,11 @@ class LoadedMessagebox extends React.Component {
     state = {
         hiller: getHiller(values),
         updatedValues:null,
-        gotValues:`hidden`
+        error:false
     };
     componentDidMount(){
         const db = firebase.database();
-        console.log(this.props.id);
         db.ref('Hillers/'+this.props.id).once('value').then((snapshot)=>{
-            console.log('READ');
                 snapshot.forEach((childSnapshot) => {                     
                             this.setState((prevState)=>({
                                 updatedValues: {
@@ -26,24 +24,41 @@ class LoadedMessagebox extends React.Component {
                                     [childSnapshot.key] : childSnapshot.val()}
                             }));
                         });                       
-                        const val = this.state.updatedValues; 
-                        console.log(val);                    
+                        const val = this.state.updatedValues;                 
                         this.setState({
                             hiller:getHiller(val),
                             gotValues:`visible`
                         });
                     }).catch((e)=>{
                         console.log('Something went wong');
+                        this.setState({error:true});
                     });
     };
 
     render() {
         if (this.state.updatedValues === null) {
-           return(
-            <div>
-                <Loader/>
-            </div>
-           )
+            if(this.state.error){
+                return(
+                    <div className='box col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 '>
+                        <div className = 'row'>
+                            <div className='box_header col-12'>
+                                <p>מר וונג</p>
+                            </div>
+                        </div>
+                            <div className='row'>
+                                <div className = 'box_body col-12'>
+                                    <p>{`Something went wong... `}</p>
+                                </div>
+                            </div>
+                    </div>
+                )
+            }else{
+                return(
+                <div>
+                    <Loader/>
+                </div>
+                )
+            }
         } else {
             
     return(
