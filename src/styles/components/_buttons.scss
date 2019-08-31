@@ -1,12 +1,19 @@
 .btn_row{
     margin-top:5px;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
 }
 .btn_col{
     align-content: center;
+    margin-right:5px;
+}
+.btn_hover{
+    cursor: pointer;
 }
 .heb_btn{
     direction: rtl;
+    margin-top:3px;
     //background-color:#4267B2;
 }
 @media (max-width:50rem){

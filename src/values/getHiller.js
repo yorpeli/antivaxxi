@@ -1,12 +1,11 @@
 import images from '../values/images';
 import getItemFromArray from '../values/returnValue';
-import uuid from 'uuid';
 import moment from 'moment';
 import firebase from 'firebase/app';
 import 'firebase/database';
 
 
-const getHiller = (val)=>{
+const getHiller = (val, id)=>{
     const db = firebase.database();
     const {vaccine, charlatan, org, whyNot, professionM, 
         professionF,profession2,treatVia,
@@ -17,9 +16,6 @@ const getHiller = (val)=>{
     const prof2 = getItemFromArray(profession2);
     const via = getItemFromArray(treatVia);
     
-
-    const id = uuid();
-
     const hiller = {
         id,
         timeStamp: moment().format('MMMM Do YYYY, HH:mm:ss a'),
@@ -42,7 +38,7 @@ const getHiller = (val)=>{
     if (process.env.NODE_ENV ==='production'){
         const today =  moment().format('MMMM Do YYYY').toString();
          db.ref("Hillers/"+id).set(hiller).catch((e)=>{console.log(e)});
-         db.ref('Usage/'+today+"/"+id).set(moment().format('HH:mm:ss a').toString());
+         db.ref('Usage/'+today+"/"+moment().format('HH:mm:ss a').toString()).set(id);
     }
 return hiller;
 };

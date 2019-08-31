@@ -3,14 +3,13 @@ import Message from './message';
 import MessageHeader from '../Components/MessageHeader';
 import getHiller from '../values/getHiller';
 import hillerContext from '../context/hillerContext';
-import values from '../values/values';
 import Loader from './Loader';
 import * as firebase from 'firebase';
 
 class LoadedMessagebox extends React.Component {
 
     state = {
-        hiller: getHiller(values),
+        hiller: null,
         updatedValues:null,
         error:false
     };

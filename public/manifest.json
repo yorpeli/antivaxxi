@@ -18,8 +18,11 @@
       "sizes": "512x512"
     }	    
   ],
-  "start_url": ".",
+    "dir": "rtl",
+  "lang": "he",
+  "description": "מה שתקשורת המיינסטרים לא תספר לכם על חיסונים",
+  "start_url": "antivaxxi.web.app/",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#4267B2",
   "background_color": "#ffffff"
 }
