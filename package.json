@@ -17,7 +17,7 @@
     "react-share": "^3.0.1",
     "react-validation": "^3.0.7",
     "uuid": "^3.3.3",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
